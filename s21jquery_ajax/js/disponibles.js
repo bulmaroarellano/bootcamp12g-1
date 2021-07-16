@@ -112,3 +112,7 @@ printAllAvailablePets()
 $('.home').click(function(){
     location.href = "index.html"
 })
+
+$(document).ready(function() {
+    $('.select2').select2();
+});

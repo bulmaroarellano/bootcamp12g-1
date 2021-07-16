@@ -224,15 +224,9 @@ const capitalize = (s) => {
    if(arraySpecies.length>0){
        if(!arraySpecies.includes(specieCap)){
            arraySpecies.push(specieCap)
-           console.log('specieInconming', specieCap);
-            $("#specie-filter").append(`<option value="${specieCap}">${specieCap}</option>`) 
-            $("#specie-select").append(`<option value="${specieCap}">${specieCap}</option>`) 
-        }}else{ 
-            $("#specie-select").append(`<option value="${specieCap}">${specieCap}</option>`) 
-            $("#specie-filter").append(`<option value="${specieCap}">${specieCap}</option>`) 
-
-        arraySpecies.push(specieCap);
-
+           rellenaSelectFilter(specieCap);
+        }}else{   
+        rellenaSelectFilter(specieCap)
          console.log('first data array generated', arraySpecies);
        }
    }
@@ -246,3 +240,11 @@ $('.disponibles').click(function(){
     location.href = "disponibles.html"
 })
 
+function rellenaSelectFilter(specieCap){
+    $("#specie-select").append(`<option value="${specieCap}">${specieCap}</option>`)
+    $("#specie-filter").append(`<option value="${specieCap}">${specieCap}</option>`)
+}
+
+$(document).ready(function() {
+    $('.select2').select2();
+});
